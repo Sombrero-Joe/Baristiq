@@ -1,4 +1,4 @@
-const CACHE_NAME = 'baristiq-live-v4';
+const CACHE_NAME = 'baristiq-live-v5';
 const APP_FILES = ['./', './index.html'];
 
 self.addEventListener('install', event => {
@@ -13,7 +13,7 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
       .then(keys => Promise.all(
-        keys.filter(key => key.startsWith('baristiq-live-') && key !== CACHE_NAME)
+        keys.filter(key => key.startsWith('baristiq-test-') && key !== CACHE_NAME)
           .map(key => caches.delete(key))
       ))
       .then(() => self.clients.claim())
